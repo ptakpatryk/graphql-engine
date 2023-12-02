@@ -1,5 +1,5 @@
 # Building wrk-websocket-server
-FROM alpine:3.11.3 as server-builder
+FROM alpine:3.18.5 as server-builder
 RUN apk add cabal ghc
 RUN apk add ca-certificates
 RUN apk add wget
@@ -18,7 +18,7 @@ RUN cabal new-build
 RUN cp $(cabal new-exec which wrk-websocket-server) /tmp
 
 # Building wrk2
-FROM alpine:3.11.3 as wrk2-builder
+FROM alpine:3.18.5 as wrk2-builder
 ARG tag=print-latencies
 RUN apk add alpine-sdk openssl-dev luajit-dev
 RUN apk add zlib zlib-dev
@@ -27,7 +27,7 @@ RUN unzip /tmp/wrk2.zip -d /tmp/
 RUN make -C /tmp/wrk2-${tag}
 
 # Install wrk as an alpine package
-FROM alpine:3.11.3
+FROM alpine:3.18.5
 ARG tag=print-latencies
 ENV HASURA_BENCH_WRK_LUA_SCRIPT=/root/bench_scripts/bench-wrk.lua
 ENV HASURA_BENCH_WRK2_LUA_SCRIPT=/root/bench_scripts/bench-wrk2.lua
