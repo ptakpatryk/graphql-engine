@@ -23,7 +23,7 @@
     "react-apollo": "^2.4.1",
     "react-dom": "^16.6.3",
     "react-hot-loader": "^4.3.12",
-    "react-static": "^6.0.18"
+    "react-static": "^6.3.7"
   },
   "devDependencies": {
     "eslint-config-react-tools": "1.x.x",
