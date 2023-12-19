@@ -11,7 +11,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-relay": "^0.0.0-experimental-94e87455",
-    "react-scripts": "3.4.1",
+    "react-scripts": "5.0.0",
     "relay-runtime": "^9.1.0"
   },
   "scripts": {
